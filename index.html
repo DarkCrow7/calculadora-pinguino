@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="icon" type="image/x-icon" href="calculadoraico.ico">
+</head>
+
+<body>
+    <div class="calculadora-contenedor">
+        <img src="calculadora.png" alt="pinguino calculadora" class="pinguino-fondo">
+        <div class="zona-arrastre"></div>
+        <div class="barra-titulo">
+            <button class="control-ventana" onclick="minimizarVentana()">-</button>
+            <button class="control-ventana cerrar" onclick="cerrarVentana()">x</button>
+        </div>
+        <div class="interfaz">
+            <div class="operacion-previa" id="previa"></div>
+            <div class="pantalla" id="pantalla">0</div>
+            <button class="accion" onclick="limpiar()">C</button>
+            <button onclick="cambiarSigno()">±</button>
+            <button onclick="eliminar()">⌫</button>
+            <button class="operador" onclick="agregarOperacion('/')">/</button>
+
+            <button onclick="agregarNumero('1')">1</button>
+            <button onclick="agregarNumero('2')">2</button>
+            <button onclick="agregarNumero('3')">3</button>
+            <button class="operador" onclick="agregarOperacion('+')">+</button>
+
+            <button onclick="agregarNumero('4')">4</button>
+            <button onclick="agregarNumero('5')">5</button>
+            <button onclick="agregarNumero('6')">6</button>
+            <button class="operador" onclick="agregarOperacion('-')">-</button>
+
+            <button onclick="agregarNumero('7')">7</button>
+            <button onclick="agregarNumero('8')">8</button>
+            <button onclick="agregarNumero('9')">9</button>
+            <button class="operador" onclick="agregarOperacion('*')">*</button>
+
+            <button onclick="agregarNumero('0')">0</button>
+            <button class="operador" onclick="calcular()">=</button>
+
+        </div>
+    </div>
+
+    <script src="owo.js"></script>
+</body>
+
+</html>
