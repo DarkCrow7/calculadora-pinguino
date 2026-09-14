@@ -5,10 +5,18 @@ let operacionCompleta = "";
 
 const pantallaActual = document.getElementById("pantalla");
 const pantallaPrevia = document.getElementById("previa");
-const { ipcRenderer } = require('electron');
+
+let ipcRenderer;
+try {
+    ({ ipcRenderer } = require('electron'));
+} catch (error) {
+    ipcRenderer = null;
+}
 
 function minimizarVentana() {
-    ipcRenderer.send('minimizar-ventana');
+    if (ipcRenderer) {
+        ipcRenderer.send('minimizar-ventana');
+    }
 }
 
 function cerrarVentana() {
@@ -180,3 +188,7 @@ document.addEventListener("keydown", function (evento) {
             break;
     }
 });
+
+if (!ipcRenderer) {
+    document.querySelector('.barra-titulo').style.display = 'none';
+}
